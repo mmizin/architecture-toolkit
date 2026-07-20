@@ -37,6 +37,12 @@ is to **improve architectural decision-making**, not merely to produce markdown.
   ADR's reasoning.
 - `architecture-librarian` — for repository-wide duplicate/conflict
   detection, index health, and cross-artifact consistency.
+- `c4-expert` — when the accepted decision changes structure that a documented
+  view should now show (a new container, a changed boundary or dependency
+  direction). Not every ADR implies a diagram: "choose a logging library"
+  changes no view and needs no handoff.
+- `arc42-expert` — when §9 needs to cite this ADR, or the decision invalidates
+  what a narrative section currently says.
 
 ## When to use
 

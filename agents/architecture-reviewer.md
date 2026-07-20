@@ -41,6 +41,15 @@ of surfacing a real weakness.
   written or substantially improved.
 - `architecture-discovery` — when the proposal reflects an incomplete
   understanding of the existing system, not a reasoning flaw.
+- `c4-expert` — when the architecture is sound but the diagram representing it
+  needs rework (wrong abstraction level, missing or mislabeled relationships).
+- `arc42-expert` — when the reasoning holds but the narrative documentation is
+  the weak part: a section is missing, thin, or contradicts another.
+
+Escalate under `references/plugin-design-principles.md` → *Escalation etiquette*.
+It matters most on the `architecture-discovery` edge: if discovery returns the
+same artifact citing a quality question, do not send it back — surface the
+disagreement to the user.
 
 ## What you review
 

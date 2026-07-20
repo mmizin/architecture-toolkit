@@ -42,6 +42,10 @@ audits documentation but does not make architectural decisions.
 - `architecture-reviewer` — when the question is architectural quality
   (should this decision have been made this way), not consistency.
 
+Escalate under `references/plugin-design-principles.md` → *Escalation etiquette*:
+one handoff per condition, and never re-escalate an artifact that came back
+unchanged — report it to the user instead.
+
 ## What you check
 
 Scan the docs/ADR collection and report on:
@@ -57,8 +61,14 @@ Scan the docs/ADR collection and report on:
   that convention expects: a C4 container with no ADR for its technology
   choice, or an accepted ADR with no diagram reflecting it. Report as a gap
   and recommend which skill should fill it (`adr-expert` or `c4-expert`).
-- **Obsolete decisions** — accepted ADRs overtaken by reality but not marked
-  deprecated/superseded.
+- **Obsolete decisions** — an accepted ADR whose decision a later accepted
+  artifact has already replaced in substance, but whose status was never moved
+  to deprecated/superseded. This is a **lifecycle-status** check, answerable
+  from the documents alone: the newer artifact is the evidence. Distinct from
+  *Architectural conflicts* above, where two artifacts disagree and neither
+  supersedes the other. An ADR overtaken by *reality* rather than by another
+  document is architecture drift — you cannot see it from here; escalate to
+  `architecture-discovery`.
 - **Supersede chains** — every "Superseded by" has a matching "Supersedes";
   no dangling or circular references.
 - **Cross-references** — related ADRs link to each other; arc42 §9 and C4
