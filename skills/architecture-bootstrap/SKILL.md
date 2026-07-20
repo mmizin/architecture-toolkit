@@ -3,12 +3,12 @@ name: architecture-bootstrap
 description: >-
   Entry point for a project with no (or stale) architecture documentation.
   Given a fresh codebase, sequence architecture-discovery, adr-expert,
-  c4-expert, arc42-expert, and architecture-librarian into one coherent
-  documentation set — README/ARCHITECTURE overview, arc42 sections, C4
-  diagrams, and an ADR index — with consistent cross-links. Use when the
-  user wants to "document the whole project" or "create the docs a project
-  is missing" rather than a single artifact, and doesn't know which specific
-  skill to start with.
+  c4-expert, and arc42-expert into one coherent documentation set —
+  README/ARCHITECTURE overview, arc42 sections, C4 diagrams, and ADRs — with
+  consistent cross-links, then recommend an architecture-librarian pass to
+  verify the result. Use when the user wants to "document the whole
+  project" or "create the docs a project is missing" rather than a single
+  artifact, and doesn't know which specific skill to start with.
 ---
 
 # Architecture Bootstrap
@@ -35,7 +35,9 @@ skills that produce it.
 **Escalates to:**
 - `architecture-discovery` — to ground the plan in the real system.
 - `adr-expert`, `c4-expert`, `arc42-expert` — to produce each artifact.
-- `architecture-librarian` — to keep the resulting set healthy afterward.
+- `architecture-librarian` — to audit the resulting documentation set for
+  consistency and cross-reference health, both right after creation and on
+  an ongoing basis.
 
 ## When to use
 
@@ -60,12 +62,15 @@ skills that produce it.
 3. **Apply the appropriate skills** — `arc42-expert`, `c4-expert`,
    `adr-expert` — one artifact at a time, following each module's own
    conventions.
-4. **Connect the artifacts.** Ensure the diagrams, arc42 sections, and ADRs
-   just created reference each other correctly and don't duplicate content.
-   Flag anything inferred rather than observed for the user to confirm.
-5. **Hand off for ongoing health.** Recommend an `architecture-librarian`
-   pass to verify repository-wide consistency and index health going
-   forward — this skill sets up the initial map, it doesn't maintain it.
+4. **Connect the artifacts.** Add the required references between the
+   artifacts just created: arc42 §9 → ADRs, arc42 §3/5/6 → C4 diagrams, ADRs
+   → related ADRs. Flag anything inferred rather than observed for the user
+   to confirm. Do not perform repository-wide consistency auditing — that's
+   `architecture-librarian`; this step is wiring, not auditing.
+5. **Verify and hand off.** Recommend an `architecture-librarian` pass to
+   validate the initial documentation set now, and to maintain consistency
+   and index health going forward — this skill sets up the initial map, it
+   doesn't maintain it.
 
 ## Note on sequencing, not orchestration
 
