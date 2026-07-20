@@ -1,17 +1,20 @@
 {
   "name": "architecture-toolkit",
-  "description": "AI-powered software architecture documentation and decision management toolkit: discover architecture from existing code, generate and govern ADRs, C4 diagrams, and arc42 docs, and review architecture as an independent role.",
+  "description": "Discover, document, review, and govern software architecture with ADRs, C4, and arc42.",
   "version": "0.1.0",
   "author": {
-    "name": "mmizin"
+    "name": "Mykola Mizin"
   },
+  "homepage": "https://github.com/mmizin/architecture-toolkit",
+  "repository": "https://github.com/mmizin/architecture-toolkit",
   "keywords": [
     "architecture",
+    "software-architecture",
     "adr",
     "c4",
     "arc42",
-    "documentation",
     "architecture-review",
+    "architecture-governance",
     "discovery"
   ],
   "license": "MIT"
