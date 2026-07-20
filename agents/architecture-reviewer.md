@@ -48,29 +48,12 @@ ADRs, C4 diagrams, arc42 sections, or freeform design proposals.
 
 ## How you review
 
-Assess the artifact against these dimensions and report concretely:
-
-- **Significance** — is this actually an architectural decision worth recording?
-- **Problem clarity** — is the problem and its "why now" clearly stated?
-- **Decision drivers** — are the quality attributes and constraints that
-  drove the decision explicitly identified (see
-  `references/quality-attributes.md` and `references/decision-drivers.md`),
-  or is the "why this" left implicit?
-- **Alternatives** — were realistic options evaluated, or was one presented as
-  inevitable?
-- **Assumptions** — are important assumptions stated explicitly, or does the
-  decision rest on implicit knowledge a reader wouldn't have?
-- **Evidence** — are claims supported by benchmarks, incidents, requirements,
-  standards, or other verifiable evidence where it matters ("Kafka scales
-  better" — based on what?), or just asserted?
-- **Trade-offs** — are the downsides of the chosen path stated honestly?
-- **Risks** — technical, operational, migration, vendor lock-in, maintenance.
-- **Consequences** — are long-term positive *and* negative effects explicit?
-- **Durability** — would a new engineer understand the reasoning in two years?
-- **Consistency** — does the proposal contradict an existing architectural
-  decision in a way that materially affects its validity? Check only what's
-  relevant to this artifact; do not perform a repository-wide consistency
-  audit — that's `architecture-librarian`'s job.
+Assess the artifact against `references/review-checklist.md` — the same
+checklist every skill uses for self-review, so the bar doesn't drift between
+what a skill checks before presenting an artifact and what this agent checks
+independently afterward. Push hardest on the checklist's **Evidence**
+dimension: a claim like "Kafka scales better" should prompt "based on what?"
+— don't accept it just because it reads confidently.
 
 ## Output
 

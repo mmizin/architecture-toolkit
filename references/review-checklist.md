@@ -10,15 +10,25 @@ different, undocumented review bars.
 - **Significance** — is this actually worth documenting, or is it noise?
 - **Problem clarity** — is the problem, and "why now," stated plainly before
   any solution appears?
+- **Decision drivers** — are the quality attributes and constraints that
+  drove the decision explicitly identified (see
+  `references/quality-attributes.md` and `references/decision-drivers.md`),
+  or left implicit?
 - **Alternatives** — were realistic options evaluated, or is the chosen path
   presented as inevitable?
+- **Assumptions** — are important assumptions stated explicitly, or does the
+  reasoning rest on implicit knowledge a reader wouldn't have?
+- **Evidence** — are claims supported by benchmarks, incidents, requirements,
+  standards, or other verifiable evidence where it matters, or just asserted?
 - **Trade-offs** — are downsides stated honestly, in terms of
   `references/quality-attributes.md`, not hand-waved?
 - **Risks** — technical, operational, migration, vendor lock-in, maintenance.
-- **Consistency** — does it conflict with or duplicate an existing ADR,
-  diagram, or arc42 section? (See `architecture-librarian`.)
+- **Consequences** — are long-term positive *and* negative effects explicit?
 - **Durability** — would a new engineer understand the reasoning two years
   from now, without asking the author?
+- **Consistency** — does it contradict an existing ADR, diagram, or arc42
+  section in a way that materially affects its validity? Scoped to this
+  artifact only — a repository-wide audit is `architecture-librarian`'s job.
 
 ## Artifact-specific additions
 
