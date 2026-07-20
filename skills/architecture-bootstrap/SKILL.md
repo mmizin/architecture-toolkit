@@ -3,8 +3,8 @@ name: architecture-bootstrap
 description: >-
   Entry point for a project with no (or stale) architecture documentation.
   Given a fresh codebase, sequence architecture-discovery, adr-expert,
-  c4-expert, and arc42-expert into one coherent documentation set —
-  README/ARCHITECTURE overview, arc42 sections, C4 diagrams, and ADRs — with
+  c4-expert, and arc42-expert into one coherent documentation set — an
+  ARCHITECTURE.md entry point, arc42 sections, C4 diagrams, and ADRs — with
   consistent cross-links, then recommend an architecture-librarian pass to
   verify the result. Use when the user wants to "document the whole
   project" or "create the docs a project is missing" rather than a single
@@ -24,12 +24,17 @@ skills that produce it.
 
 **Responsible for:**
 - deciding the documentation starting point for an undocumented project
-- sequencing architecture documentation work across the other modules
+- sequencing architecture documentation work across the other modules — this is
+  the only module that turns a gap inventory into an ordered, confirmed plan
 - proposing the initial documentation plan
+- owning `ARCHITECTURE.md` as the entry point and navigation map, as defined in
+  `references/terminology.md`
 
 **Not responsible for:**
 - discovering architecture from code (that's `architecture-discovery`)
 - writing ADRs, C4 diagrams, or arc42 sections itself
+- putting architecture content into `ARCHITECTURE.md` — it links and summarizes;
+  the content lives in the artifact that owns it
 - maintaining documentation consistency over time
 
 **Escalates to:**
@@ -53,7 +58,9 @@ skills that produce it.
 1. **Discover.** Run `architecture-discovery` first (or ingest its report) to
    ground everything in the real system.
 2. **Propose a plan.** Present the intended documentation set and order, e.g.:
-   - `ARCHITECTURE.md` overview (context + solution strategy)
+   - `ARCHITECTURE.md` as the entry point: links to each artifact below with a
+     one-line summary of each — a navigation map, not architecture content
+     (see `references/terminology.md`)
    - C4 System Context + Container diagrams
    - arc42 sections that the system warrants
    - ADRs for the significant decisions discovery surfaced
@@ -71,6 +78,16 @@ skills that produce it.
    validate the initial documentation set now, and to maintain consistency
    and index health going forward — this skill sets up the initial map, it
    doesn't maintain it.
+
+## Shared references
+
+- `references/terminology.md` — the artifact vocabulary this skill plans with,
+  including which artifact type owns which content and the definition of
+  `ARCHITECTURE.md`. Name artifacts as this glossary names them; if a plan needs
+  an artifact type the glossary doesn't define, define it there first.
+- `references/plugin-design-principles.md` — read before extending this plugin
+  with a new module or artifact type. This skill coordinates all the others, so
+  it is the one most likely to surface a gap that looks like a missing module.
 
 ## Note on sequencing, not orchestration
 

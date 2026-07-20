@@ -32,6 +32,8 @@ between reality and its documentation.
   (`architecture-reviewer`'s job)
 - creating ADRs, C4 diagrams, or arc42 sections itself
 - designing a target architecture
+- ordering or sequencing the documentation work implied by the gaps it finds
+  (that's `architecture-bootstrap`)
 - auditing consistency across existing documentation artifacts
   (`architecture-librarian`'s job)
 
@@ -80,7 +82,9 @@ between reality and its documentation.
    - Observed and inferred data flows and integration points
    - Candidate ADRs (potential decisions requiring confirmation), ranked by
      significance
-   - Documentation gaps and a recommended generation order
+   - Documentation gaps — an unordered inventory of what is missing relative
+     to what the discovered architecture warrants. Report the evidence, not a
+     plan: sequencing the work is `architecture-bootstrap`'s job.
 
 ## Handing off
 
