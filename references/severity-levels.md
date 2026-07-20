@@ -15,8 +15,11 @@ artifact; severity classifies one finding within a report.
   explanation exists (migration in progress, deprecated doc not yet updated,
   intentional exception). Report it, don't call it a conflict. See the
   validation principle below.
-- **Gap** — something that should exist per convention doesn't: a missing
-  cross-link, an ADR with no status, a C4 diagram with no corresponding ADR.
+- **Gap** — something required by project convention or by the artifact's own
+  purpose is missing: a missing cross-link, an ADR with no status, a
+  significant technology choice shown in a diagram with no ADR explaining
+  it. Not every container or component needs an ADR — only flag a missing
+  ADR where the diagram represents a real decision, not routine structure.
 - **Recommendation** — no defect, but a concrete improvement (renumbering,
   clearer title, a cross-link that would help navigation).
 - **Info** — worth noting, no action required.

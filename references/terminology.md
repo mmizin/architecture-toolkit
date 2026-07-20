@@ -25,3 +25,8 @@ locally.
   a one-way door is expensive or impossible to undo; a two-way door can be
   reversed cheaply. Used under Decision Drivers to flag how much rigor a
   decision deserves.
+- **Architecture drift** — divergence between documented architecture (ADRs,
+  C4, arc42) and the actual system's code/behavior. Detected by
+  `architecture-discovery` re-scanning the repository, not by
+  `architecture-librarian`, which only compares documentation artifacts
+  against each other.

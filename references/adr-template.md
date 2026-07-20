@@ -17,22 +17,24 @@ Describe the situation forcing a decision:
 - business context
 - technical context
 - constraints
-- assumptions
 - relevant existing architecture
 
 State the problem plainly. No solution here.
 
 ## Decision Drivers
 
-The quality attributes and forces that dominate this decision, e.g.:
+List the quality attributes, constraints, and forces that actually
+influenced this decision. Select from:
 
-- maintainability
-- simplicity
-- scalability / performance
-- security / reliability
-- developer experience
-- deployment complexity / operational cost
-- testing strategy
+- `references/quality-attributes.md`
+- `references/decision-drivers.md`
+
+Only the drivers relevant to this decision — do not copy the full lists.
+
+## Assumptions
+
+Important assumptions this decision depends on. If one of these turns out to
+be false, revisit the decision.
 
 ## Considered Options
 
