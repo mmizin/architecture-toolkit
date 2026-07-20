@@ -23,7 +23,7 @@ references (and later, MCP servers). Each module owns exactly one area.
 | Skill | Purpose |
 |-------|---------|
 | `architecture-discovery` | Scan a codebase, reconstruct its architecture, and surface missing docs and candidate ADRs. |
-| `architecture-documentation` | Orchestrate an end-to-end documentation set for a project ("document everything"). |
+| `architecture-bootstrap` | Sequence an end-to-end documentation set for a project ("document everything"). |
 | `adr-expert` | Create, review, improve, and govern ADRs across their lifecycle. |
 | `c4-expert` | Create and review C4 diagrams (Context / Container / Component). |
 | `arc42-expert` | Generate, update, and validate arc42 architecture documentation. |
@@ -34,10 +34,22 @@ references (and later, MCP servers). Each module owns exactly one area.
 | `architecture-reviewer` | Independent senior-architect critique of an ADR/diagram/doc. |
 | `architecture-librarian` | Audits the docs repository for duplicates, conflicts, obsolete decisions, and index health. |
 
-### References (shared templates)
+### References (shared templates, vocabularies, governance)
+
+**Templates** — the shape an artifact takes:
 - `references/adr-template.md`
 - `references/arc42-template.md`
 - `references/c4-guidelines.md`
+
+**Vocabularies** — the shared terms modules reason with:
+- `references/terminology.md`
+- `references/quality-attributes.md`
+- `references/decision-drivers.md`
+
+**Governance** — how work is judged and how the plugin itself is built:
+- `references/review-checklist.md`
+- `references/severity-levels.md`
+- `references/plugin-design-principles.md`
 
 ## Layout
 
@@ -46,8 +58,8 @@ architecture-toolkit/
 ├── .claude-plugin/
 │   └── plugin.json
 ├── skills/
+│   ├── architecture-bootstrap/SKILL.md
 │   ├── architecture-discovery/SKILL.md
-│   ├── architecture-documentation/SKILL.md
 │   ├── adr-expert/SKILL.md
 │   ├── c4-expert/SKILL.md
 │   └── arc42-expert/SKILL.md
@@ -57,7 +69,13 @@ architecture-toolkit/
 ├── references/
 │   ├── adr-template.md
 │   ├── arc42-template.md
-│   └── c4-guidelines.md
+│   ├── c4-guidelines.md
+│   ├── decision-drivers.md
+│   ├── plugin-design-principles.md
+│   ├── quality-attributes.md
+│   ├── review-checklist.md
+│   ├── severity-levels.md
+│   └── terminology.md
 └── README.md
 ```
 
@@ -68,17 +86,38 @@ set of **independent** modules with a recommended order rather than a runtime
 orchestrator:
 
 1. **`architecture-discovery`** — scan the project; get a report of structure,
-   data flows, doc gaps, and candidate decisions.
-2. **`adr-expert`** — turn the significant candidate decisions into ADRs.
-3. **`c4-expert`** — draw the Context and Container diagrams.
-4. **`arc42-expert`** — assemble the sections into full documentation, linking
-   ADRs (§9) and C4 diagrams (§3/5/6).
-5. **`architecture-reviewer`** (agent) — get an independent critique.
-6. **`architecture-librarian`** (agent) — keep the repository consistent over
-   time.
+   data flows, doc gaps, and candidate decisions. This is the grounding step:
+   every authoring module below is reachable from its report.
+2. **Authoring** — discovery hands off to whichever artifacts the gaps call for:
+   - **`adr-expert`** — turn the significant candidate decisions into ADRs.
+   - **`c4-expert`** — diagram the discovered boundaries (Context / Container).
+   - **`arc42-expert`** — write the architecture narrative, linking ADRs (§9)
+     and C4 diagrams (§3/5/6).
+3. **`architecture-reviewer`** (agent) — independent critique. Every authoring
+   module escalates here when the question is architectural quality rather than
+   documentation form.
+4. **`architecture-librarian`** (agent) — keep the repository consistent over
+   time. Every authoring module escalates here for cross-artifact consistency.
 
 For a greenfield or undocumented project, start at
-**`architecture-documentation`**, which sequences the above into one plan.
+**`architecture-bootstrap`**, which grounds itself in `architecture-discovery`
+and sequences the above into one plan you confirm before any artifact is written.
+
+## What this toolkit does not do
+
+This toolkit **documents, reviews, and governs** architecture. It does not
+**design** it. No module invents a target architecture, chooses between
+candidate designs, or decides on your behalf — the skills capture and critique
+decisions that people make. If you need a design produced rather than recorded,
+that work happens outside this plugin; bring the outcome back here to document.
+
+## Contributing / adding a module
+
+Read `references/plugin-design-principles.md` first. It defines the
+Single-Responsibility rule and the three-part boundary contract
+(`Responsible for` / `Not responsible for` / `Escalates to`) that every skill and
+agent in this plugin follows. A new module that does not carry that block, or
+that overlaps an existing module's ownership, is not ready to add.
 
 ## Usage
 
