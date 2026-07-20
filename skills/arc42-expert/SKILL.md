@@ -36,8 +36,8 @@ proven 12-section template that scales from a one-pager to full documentation.
 - `adr-expert` — when §9 needs to cite a decision that has no ADR yet.
 - `architecture-reviewer` — when the question is architectural quality, not
   documentation completeness.
-- `architecture-librarian` — when a consistency issue spans more than this
-  document (e.g. conflicts with other artifacts across the repository).
+- `architecture-librarian` — when resolving a consistency question requires
+  comparing this document with other repository artifacts.
 
 ## When to use
 
@@ -55,17 +55,19 @@ proven 12-section template that scales from a one-pager to full documentation.
 6. Runtime View  *(→ sequence / C4 dynamic)*
 7. Deployment View
 8. Cross-cutting Concepts
-9. Architecture Decisions  *(→ reference ADRs from adr-expert; do not restate
-   their reasoning)*
+9. Architecture Decisions  *(→ reference ADRs; do not restate their
+   reasoning)*
 10. Quality Requirements  *(use the shared vocabulary in
-    `references/quality-attributes.md`, not ad hoc terms)*
+    `references/quality-attributes.md`; express important qualities as
+    concrete quality scenarios, not vague adjectives)*
 11. Risks & Technical Debt
 12. Glossary
 
-See `references/terminology.md`'s "Artifact ownership" entry: arc42 narrates
-and links, it doesn't own decision rationale (ADRs) or structural views (C4).
-
 ## Workflow
+
+See `references/terminology.md` for artifact ownership conventions: arc42
+narrates and links, it doesn't own decision rationale (ADRs) or structural
+views (C4).
 
 1. Determine scope — full document vs specific sections. Don't pad empty
    sections; omit or mark "not applicable" honestly.
@@ -76,11 +78,9 @@ and links, it doesn't own decision rationale (ADRs) or structural views (C4).
 3. Draft/update sections using `references/arc42-template.md`.
 4. **Reference, don't duplicate**: section 9 links to ADRs; sections 3/5/6
    embed or link C4 diagrams.
-5. Validate against `references/review-checklist.md`'s arc42-specific
-   criteria (references instead of restating, unused sections marked "not
-   applicable" rather than padded) alongside the general dimensions
-   (Significance, Consistency scoped to this document, Durability). This
-   checks documentation completeness, not whether the underlying
-   architecture or decisions are sound — that's `architecture-reviewer`.
+5. Validate against `references/review-checklist.md`. Apply only the
+   arc42-specific criteria and the documentation-completeness dimensions;
+   do not evaluate architectural correctness — that's
+   `architecture-reviewer`.
 
 See `references/arc42-template.md` for the section prompts.
