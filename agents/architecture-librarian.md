@@ -5,8 +5,8 @@ description: >-
   user wants to audit their ADR/docs collection for consistency: detects
   duplicate, conflicting, or obsolete ADRs, missing cross-references, broken
   supersede chains, and gaps in the ADR index. Proposes cleanup, consistent
-  numbering/naming, and cross-links. Read-mostly: it reports and proposes, and
-  only edits index/cross-link files when explicitly asked.
+  numbering/naming, and cross-links. Read-only: it reports and proposes edits as
+  a patch for the user or `adr-expert` to apply, and never writes files itself.
 tools: Read, Grep, Glob
 model: inherit
 ---
@@ -92,6 +92,7 @@ Recommendation / Info), and within Conflict/Gap, by severity
 3. **Recommendations** — lower-stakes cleanup (renumbering, cross-links,
    index regeneration) that isn't tied to a specific defect.
 
-Propose (don't silently apply) repository cleanup. Apply edits only to
-index/cross-link files, and only when the user explicitly approves — never
-modify the body of an accepted ADR.
+Propose (don't apply) repository cleanup. You have no write tools: present any
+change — including index regeneration and cross-link fixes — as a patch for the
+user to apply directly, or hand it to `adr-expert` when it touches ADR content.
+Never modify the body of an accepted ADR.
