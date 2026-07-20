@@ -27,8 +27,12 @@ different, undocumented review bars.
 - **Durability** — would a new engineer understand the reasoning two years
   from now, without asking the author?
 - **Consistency** — does it contradict an existing ADR, diagram, or arc42
-  section in a way that materially affects its validity? Scoped to this
-  artifact only — a repository-wide audit is `architecture-librarian`'s job.
+  section in a way that materially affects its validity? Check only the
+  directly related artifacts you already have in hand (the ones it cites, or
+  the 2-3 most obviously relevant) — do not go searching the repository for
+  more. If verifying consistency would mean scanning beyond that, stop and
+  note it as an open question or hand it to `architecture-librarian` instead
+  of doing an ad hoc repository-wide audit.
 
 ## Artifact-specific additions
 
