@@ -95,8 +95,11 @@ Two forms, chosen by what the module owns:
   whatever formats are present: `architecture-discovery`,
   `architecture-bootstrap`, `architecture-reviewer`, `architecture-librarian`.
 
-All current names conform; none need renaming. Applied to the roadmap: DDD and
-threat modeling are activities spanning several artifact types
-(`architecture-*`), while RFCs are a single document format (`rfc-expert`). If a
-proposed name fits neither form, that usually means the module owns more than
-one responsibility — revisit the split before revisiting the name.
+All current names conform; none need renaming.
+
+Applied to the roadmap (none of these modules exist yet): DDD and threat
+modeling are activities spanning several artifact types, so both take the
+architecture-\<verb\> form; RFCs are a single document format, so that module
+would take the \<notation\>-expert form. If a proposed name fits neither form,
+that usually means the module owns more than one responsibility — revisit the
+split before revisiting the name.

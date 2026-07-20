@@ -7,7 +7,7 @@ description: >-
   significance, justification, alternatives, trade-offs, risks, and long-term
   consequences, and challenges weak reasoning. Read-only: it critiques, it does
   not rewrite the artifact.
-tools: Read, Grep, Glob, WebFetch
+tools: Read, Grep, Glob
 model: inherit
 ---
 
