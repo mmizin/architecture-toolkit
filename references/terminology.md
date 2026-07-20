@@ -38,3 +38,12 @@ locally.
   diagrams instead of repeating their content. Copying decision rationale or
   diagram content into arc42 (or vice versa) is a drift risk, not a
   convenience.
+- **`ARCHITECTURE.md`** — the repository's architecture **entry point** and
+  navigation map, owned by `architecture-bootstrap`. It holds links to the
+  real artifacts plus a one-line summary of each, so a newcomer can find the
+  documentation without knowing its layout. It explicitly does **not** hold
+  architecture content: no arc42 sections (notably §3 Context and §4 Solution
+  Strategy), no decision rationale, no diagrams. If a statement in
+  `ARCHITECTURE.md` would be the source of truth for something, it belongs in
+  an ADR, a C4 diagram, or an arc42 section instead, with `ARCHITECTURE.md`
+  linking to it.

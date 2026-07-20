@@ -1,8 +1,10 @@
 # Severity Levels — Shared Finding Taxonomy
 
 The classification used for individual findings in any audit or review report
-produced by this toolkit (`architecture-librarian`, `architecture-reviewer`,
-or a skill's self-check). This is a different axis from
+produced by this toolkit's two auditing agents (`architecture-librarian` and
+`architecture-reviewer`). Authoring skills do not use it: a skill self-reviewing
+its own draft applies `references/review-checklist.md`'s verdict scale and does
+not classify the severity of its own defects. This is a different axis from
 `references/review-checklist.md`'s verdict scale: verdict judges a whole
 artifact; severity classifies one finding within a report.
 
@@ -31,7 +33,7 @@ artifact; severity classifies one finding within a report.
 - **High** — accepted artifacts actively contradict each other.
 - **Medium** — missing cross-link or index entry; doesn't mislead, but makes
   the record harder to trust or navigate.
-- **Low** — cosmetic (title inconsistency, minor numbering gap).
+- **Low** — cosmetic (title inconsistency, minor numbering inconsistency).
 
 ## Validation principle
 

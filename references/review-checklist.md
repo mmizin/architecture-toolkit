@@ -18,8 +18,9 @@ different, undocumented review bars.
   presented as inevitable?
 - **Assumptions** — are important assumptions stated explicitly, or does the
   reasoning rest on implicit knowledge a reader wouldn't have?
-- **Evidence** — are claims supported by benchmarks, incidents, requirements,
-  standards, or other verifiable evidence where it matters, or just asserted?
+- **Evidence** — are claims supported by verifiable evidence where it
+  matters — production incidents, benchmarks, standards, SLAs, measurements,
+  explicit business constraints — or just asserted?
 - **Trade-offs** — are downsides stated honestly, in terms of
   `references/quality-attributes.md`, not hand-waved?
 - **Risks** — technical, operational, migration, vendor lock-in, maintenance.
@@ -38,8 +39,14 @@ different, undocumented review bars.
 
 - **ADR**: does every section of `references/adr-template.md` carry real
   content, not placeholder text? Is the status accurate?
-- **C4 diagram**: single zoom level per diagram, every relationship labeled
-  with intent + technology (see `references/c4-guidelines.md`)?
+- **C4 diagram**: single zoom level per diagram, no mixed levels; every
+  relationship labeled with intent + technology; the right abstraction level
+  for the audience; element count manageable (split the diagram if it has
+  become unreadable). See `references/c4-guidelines.md` for the conventions
+  and Mermaid examples these criteria check against. Whether the diagram still
+  matches the *real system* is not reviewable from the diagram alone — hand
+  that to `architecture-discovery` rather than cross-checking source code
+  yourself.
 - **arc42 section**: does it reference ADRs/diagrams instead of restating
   them? Are unused sections marked "not applicable" rather than padded?
 
@@ -49,3 +56,6 @@ different, undocumented review bars.
 - **Accept with changes** — sound, but named gaps must be filled first.
 - **Needs rework** — a core dimension above is missing or wrong; don't patch,
   redo.
+- **Cannot assess** — the artifact doesn't give enough to evaluate against
+  these criteria (e.g. a decision stated with no requirements, constraints,
+  or alternatives). Say what's missing rather than guessing at a verdict.

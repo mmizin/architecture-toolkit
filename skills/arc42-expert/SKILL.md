@@ -6,12 +6,13 @@ description: >-
   structured architecture document for a system, wants to fill or refresh
   specific arc42 sections, or wants to check existing arc42 documentation for
   structural completeness. Integrates ADRs (section 9) and C4 diagrams
-  (sections 3, 5, 6) by reference rather than duplicating them.
+  (sections 3, 5, 6, 7) by reference rather than duplicating them.
 ---
 
 # arc42 Expert
 
-> Status: v0.1 stub — structure and workflow are defined; deepen during use.
+> Status: Initial implementation — structure and workflow are defined; deepen
+> during use.
 
 Produce and maintain architecture documentation using the arc42 structure — a
 proven 12-section template that scales from a one-pager to full documentation.
@@ -22,7 +23,8 @@ proven 12-section template that scales from a one-pager to full documentation.
 - creating and maintaining arc42 architecture documentation
 - structuring architecture knowledge across the 12 arc42 sections
 - connecting arc42 sections to the relevant ADRs and C4 diagrams by reference
-- validating an arc42 document's own structural completeness
+- validating an arc42 document's own structural completeness and internal
+  coherence
 
 **Not responsible for:**
 - discovering architecture from source code
@@ -52,8 +54,8 @@ proven 12-section template that scales from a one-pager to full documentation.
 3. Context & Scope  *(→ C4 System Context)*
 4. Solution Strategy
 5. Building Block View  *(→ C4 Container/Component)*
-6. Runtime View  *(→ sequence / C4 dynamic)*
-7. Deployment View
+6. Runtime View  *(→ sequence / C4 Dynamic)*
+7. Deployment View  *(→ C4 Deployment)*
 8. Cross-cutting Concepts
 9. Architecture Decisions  *(→ reference ADRs; do not restate their
    reasoning)*
@@ -62,6 +64,9 @@ proven 12-section template that scales from a one-pager to full documentation.
     concrete quality scenarios, not vague adjectives)*
 11. Risks & Technical Debt
 12. Glossary
+
+Not every project needs equal depth in every section — match depth to the
+system's complexity; don't pad empty sections.
 
 ## Workflow
 
@@ -72,12 +77,15 @@ views (C4).
 1. Determine scope — full document vs specific sections. Don't pad empty
    sections; omit or mark "not applicable" honestly.
 2. Gather available inputs: an existing discovery report, ADRs, C4 diagrams,
-   READMEs. If architecture knowledge is missing rather than just
-   undocumented, hand off to `architecture-discovery` instead of inferring it
-   yourself.
+   READMEs. Use what the user already provided before requesting additional
+   inputs, and prefer repository architecture documents (ADRs, C4, an
+   existing arc42/`ARCHITECTURE.md`) over general project documentation
+   (README) whenever both exist. If architecture knowledge is missing rather
+   than just undocumented, hand off to `architecture-discovery` instead of
+   inferring it yourself.
 3. Draft/update sections using `references/arc42-template.md`.
-4. **Reference, don't duplicate**: section 9 links to ADRs; sections 3/5/6
-   embed or link C4 diagrams.
+4. **Reference, don't duplicate**: section 9 links to ADRs; sections 3/5/6/7
+   embed or link existing C4 diagrams — don't draw new ones yourself.
 5. Validate against `references/review-checklist.md`. Apply only the
    arc42-specific criteria and the documentation-completeness dimensions;
    do not evaluate architectural correctness — that's
