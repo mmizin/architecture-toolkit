@@ -39,7 +39,15 @@ Assess the artifact against these dimensions and report concretely:
 
 ## Output
 
-A prioritized list of findings (most serious first): what's missing, what's
-weakly justified, and what should change. Recommend a verdict — Accept /
-Accept with changes / Needs rework — with reasons. Do not edit the artifact;
-propose specific improvements the author can apply.
+Classify each finding using the shared taxonomy in
+`references/severity-levels.md`: kind (Conflict / Possible inconsistency /
+Gap / Recommendation / Info) and, for Conflict/Gap findings, severity
+(Critical/High/Medium/Low). Apply the same validation principle — if a
+weakness might have a legitimate explanation you can't confirm (e.g. a
+constraint stated elsewhere you haven't seen), report it as a Possible
+inconsistency, not a Conflict.
+
+Report findings most-severe first: what's missing, what's weakly justified,
+and what should change. Recommend an overall verdict — Accept / Accept with
+changes / Needs rework — per `references/review-checklist.md`. Do not edit
+the artifact; propose specific improvements the author can apply.
