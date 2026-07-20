@@ -38,8 +38,14 @@ different, undocumented review bars.
 
 - **ADR**: does every section of `references/adr-template.md` carry real
   content, not placeholder text? Is the status accurate?
-- **C4 diagram**: single zoom level per diagram, every relationship labeled
-  with intent + technology (see `references/c4-guidelines.md`)?
+- **C4 diagram**: single zoom level per diagram, no mixed levels; every
+  relationship labeled with intent + technology; the right abstraction level
+  for the audience; element count manageable (split the diagram if it has
+  become unreadable). See `references/c4-guidelines.md` for the conventions
+  and Mermaid examples these criteria check against. Whether the diagram still
+  matches the *real system* is not reviewable from the diagram alone — hand
+  that to `architecture-discovery` rather than cross-checking source code
+  yourself.
 - **arc42 section**: does it reference ADRs/diagrams instead of restating
   them? Are unused sections marked "not applicable" rather than padded?
 

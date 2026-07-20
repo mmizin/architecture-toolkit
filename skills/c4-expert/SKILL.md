@@ -83,10 +83,12 @@ that ties them together.
    invent containers or relationships.
 3. Render as **Mermaid** (`C4Context` / `flowchart`) or **Structurizr DSL**;
    default to Mermaid for portability.
-4. Validate against `references/review-checklist.md`'s C4-specific
-   criteria, which point to `references/c4-guidelines.md` for the diagram
-   conventions themselves (abstraction level, labelled relationships, no
-   mixed levels).
+4. Validate against `references/review-checklist.md`'s C4-specific criteria —
+   the single review bar for every artifact type in this plugin.
+   `references/c4-guidelines.md` holds the conventions and Mermaid examples
+   those criteria check against. If the open question is whether the diagram
+   still matches the *real system*, that is outside this skill's scope:
+   escalate to `architecture-discovery` rather than reading source code.
 
 ## Inputs
 

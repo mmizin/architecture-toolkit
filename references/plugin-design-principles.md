@@ -27,6 +27,47 @@ Where a module's boundary is easy to confuse with another's, state it as:
   elsewhere.
 - **Escalates to** — which other module to hand off to, and when.
 
+## The reference layer
+
+Modules follow a template; `references/` did not, and every boundary defect
+found in the v0.1 review lived there or in the README. These rules exist so the
+reference layer is governed like the module layer is.
+
+**Three kinds, one purpose each.** Before adding a reference file, decide which
+it is — a file that is two kinds should be two files:
+
+- **Template** — the shape an artifact takes: sections, ordering, what belongs
+  in each (`adr-template.md`, `arc42-template.md`, `c4-guidelines.md`).
+- **Vocabulary** — terms and concepts modules reason with, defining nothing
+  about process (`terminology.md`, `quality-attributes.md`,
+  `decision-drivers.md`).
+- **Governance** — how work is judged, and how this plugin is built
+  (`review-checklist.md`, `severity-levels.md`, this file).
+
+**One criterion, one home.** A review criterion lives in exactly one file —
+`review-checklist.md`. A template or guideline file may describe conventions,
+but must never carry its own review checklist: that is how C4 ended up with two
+divergent review bars. If a criterion seems artifact-specific, it belongs under
+*Artifact-specific additions*, not in the artifact's own guidelines file.
+
+**A reference may never instruct a module to exceed its scope.** A guideline
+that tells a module to verify something its `Not responsible for` block
+forbids is a boundary violation living in a reference file. Phrase it as an
+escalation instead, and confirm the receiving module has an existing edge.
+
+**Reachability is transitive, and that is intended.** Skills cite templates;
+templates cite vocabularies. `adr-expert` reaches `decision-drivers.md` through
+`adr-template.md`, and that is the correct pattern — do not add a direct
+citation from every module to every relevant reference, which inflates the
+citation graph without adding information. Two requirements keep this honest:
+every reference must be listed in the README, and every reference must have at
+least one inbound citation from somewhere. A file nothing points at is not a
+reference; it is a draft.
+
+**A file's stated audience must match its actual citations.** If a reference
+claims skills use it, some skill must cite it — otherwise narrow the claim
+rather than manufacturing citations to make the sentence true.
+
 ## Escalation etiquette
 
 Escalation edges in this plugin are deliberately bidirectional — architectural

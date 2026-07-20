@@ -51,10 +51,10 @@ C4Container
     Rel(api, db, "Reads/writes", "SQL")
 ```
 
-## Review checklist
+---
 
-- Right abstraction level for the audience?
-- Every relationship labelled with intent + technology?
-- No mixed levels in a single diagram?
-- Element count manageable (split if it becomes unreadable)?
-- Diagram matches the real system (cross-check with discovery)?
+Reviewing a diagram against these conventions is
+`references/review-checklist.md`'s job — see its **C4 diagram** entry under
+*Artifact-specific additions*. This file holds conventions and examples only, so
+that there is exactly one review bar in the plugin rather than a private one per
+artifact type.
