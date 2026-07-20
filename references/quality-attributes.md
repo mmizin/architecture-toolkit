@@ -18,8 +18,8 @@ so decisions, quality scenarios, and reviews all speak the same language.
 - **Portability** — independence from a specific vendor, runtime, or platform.
 - **Cost** — infrastructure, licensing, and engineering-time cost, now and at
   scale.
-- **Developer Experience** — friction for engineers building on top of the
-  decision.
+- **Developer Experience (DX)** — friction for engineers building on top of
+  the decision.
 
 ## Usage
 

@@ -6,9 +6,9 @@ namespace, so a team can discover architecture from existing code, generate and
 govern ADRs, draw C4 diagrams, and maintain arc42 documentation — consistently
 and over time.
 
-> **Status: v0.1 — skeleton.** The plugin structure, all modules, and shared
-> templates are in place. The skill/agent bodies marked *stub* define their
-> workflow and conventions; they get deepened through use.
+> **Status: v0.1 — initial implementation.** The plugin structure, all
+> modules, and shared templates are in place. Workflows and governance are
+> defined; deeper examples and operational guidance come through use.
 
 ## Why a plugin (not one big skill)
 
@@ -25,7 +25,7 @@ references (and later, MCP servers). Each module owns exactly one area.
 | `architecture-discovery` | Scan a codebase, reconstruct its architecture, and surface missing docs and candidate ADRs. |
 | `architecture-bootstrap` | Sequence an end-to-end documentation set for a project ("document everything"). |
 | `adr-expert` | Create, review, improve, and govern ADRs across their lifecycle. |
-| `c4-expert` | Create and review C4 diagrams (Context / Container / Component). |
+| `c4-expert` | Create and review C4 diagrams (Context / Container / Component, plus supplementary Dynamic and Deployment views). |
 | `arc42-expert` | Generate, update, and validate arc42 architecture documentation. |
 
 ### Agents (independent roles)
@@ -87,7 +87,9 @@ orchestrator:
 
 1. **`architecture-discovery`** — scan the project; get a report of structure,
    data flows, doc gaps, and candidate decisions. This is the grounding step:
-   every authoring module below is reachable from its report.
+   the discovery report is the preferred input for the authoring modules
+   below, though each can also work from an ADR, diagram, or description the
+   user provides directly.
 2. **Authoring** — discovery hands off to whichever artifacts the gaps call for:
    - **`adr-expert`** — turn the significant candidate decisions into ADRs.
    - **`c4-expert`** — diagram the discovered boundaries (Context / Container).
@@ -102,6 +104,11 @@ orchestrator:
 For a greenfield or undocumented project, start at
 **`architecture-bootstrap`**, which grounds itself in `architecture-discovery`
 and sequences the above into one plan you confirm before any artifact is written.
+
+| Starting point | Flow |
+|---|---|
+| Existing, partially documented codebase | `architecture-discovery` → authoring modules → `architecture-reviewer` → `architecture-librarian` |
+| Undocumented / greenfield project | `architecture-bootstrap` → `architecture-discovery` → plan → authoring modules → `architecture-librarian` |
 
 ## What this toolkit does not do
 
@@ -128,7 +135,8 @@ describing the task. Agents are launched as subagents for review/audit tasks.
 ## Roadmap
 
 - **v0.1** — plugin skeleton, all modules + templates (this release).
-- **v0.2** — deepen `architecture-discovery` and `adr-expert`; realistic
+- **v0.2** — deepen `architecture-discovery` and `adr-expert`; `c4-expert`
+  conventions and examples for Dynamic/Deployment views; realistic
   end-to-end examples.
 - **v0.3+** — MCP integrations (GitHub / Jira / Confluence) so the librarian can
   verify ADR links against real trackers and wikis; additional modules (DDD,

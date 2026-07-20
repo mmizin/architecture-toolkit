@@ -18,8 +18,9 @@ different, undocumented review bars.
   presented as inevitable?
 - **Assumptions** — are important assumptions stated explicitly, or does the
   reasoning rest on implicit knowledge a reader wouldn't have?
-- **Evidence** — are claims supported by benchmarks, incidents, requirements,
-  standards, or other verifiable evidence where it matters, or just asserted?
+- **Evidence** — are claims supported by verifiable evidence where it
+  matters — production incidents, benchmarks, standards, SLAs, measurements,
+  explicit business constraints — or just asserted?
 - **Trade-offs** — are downsides stated honestly, in terms of
   `references/quality-attributes.md`, not hand-waved?
 - **Risks** — technical, operational, migration, vendor lock-in, maintenance.
@@ -55,3 +56,6 @@ different, undocumented review bars.
 - **Accept with changes** — sound, but named gaps must be filled first.
 - **Needs rework** — a core dimension above is missing or wrong; don't patch,
   redo.
+- **Cannot assess** — the artifact doesn't give enough to evaluate against
+  these criteria (e.g. a decision stated with no requirements, constraints,
+  or alternatives). Say what's missing rather than guessing at a verdict.

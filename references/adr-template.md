@@ -30,6 +30,8 @@ influenced this decision. Select from:
 - `references/decision-drivers.md`
 
 Only the drivers relevant to this decision — do not copy the full lists.
+Prefer naming the specific driver over the category, e.g. "Release deadline"
+or "PCI compliance," not "Business constraints."
 
 ## Assumptions
 
@@ -38,7 +40,7 @@ be false, revisit the decision.
 
 ## Considered Options
 
-List **every realistic** option. For each:
+List **every materially realistic** option. For each:
 
 ### Option A — <name>
 - Advantages:
@@ -69,6 +71,8 @@ State clearly **what** was chosen, **why**, and **why now**. No ambiguity.
 > Every decision has trade-offs. Be honest.
 
 ## Risks
+
+Future risks introduced by this decision.
 
 - technical risks
 - operational risks

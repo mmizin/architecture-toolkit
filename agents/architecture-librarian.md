@@ -13,7 +13,7 @@ model: inherit
 
 # Architecture Librarian
 
-> Status: v0.1 stub.
+> Status: Initial implementation.
 
 The Architecture Librarian ensures that architecture documentation remains
 internally consistent, complete, navigable, and historically accurate. It
@@ -58,9 +58,14 @@ Scan the docs/ADR collection and report on:
   doesn't exist or doesn't match, e.g. an ADR cites a diagram that was never
   created, or "Superseded by ADR-0012" where ADR-0012 doesn't exist.
 - **Documentation coverage gaps** — an artifact exists with no counterpart
-  that convention expects: a C4 container with no ADR for its technology
-  choice, or an accepted ADR with no diagram reflecting it. Report as a gap
-  and recommend which skill should fill it (`adr-expert` or `c4-expert`).
+  that repository convention expects: a C4 container whose technology choice
+  repository convention says should have an ADR, or an accepted ADR whose
+  decision repository convention says should be reflected in a diagram.
+  Not every container needs an ADR (some choices are self-evident) and not
+  every ADR needs a diagram (e.g. coding style, versioning, naming
+  conventions) — only report a gap where the repository's own conventions
+  imply one should exist. Report as a gap and recommend which skill should
+  fill it (`adr-expert` or `c4-expert`).
 - **Obsolete decisions** — an accepted ADR whose decision a later accepted
   artifact has already replaced in substance, but whose status was never moved
   to deprecated/superseded. This is a **lifecycle-status** check, answerable
@@ -75,7 +80,10 @@ Scan the docs/ADR collection and report on:
   diagrams are referenced where relevant.
 - **Index health** — the ADR index (`README.md` / `index.md`) lists every ADR
   with correct status and numbering.
-- **Naming/numbering** — consistent, gap-free ADR numbering and titles.
+- **Naming/numbering** — numbering and titles consistent with repository
+  conventions (note: gaps in ADR numbers are often intentional — deleted or
+  rejected drafts — not an error by themselves; flag only anomalies that
+  contradict the repo's own numbering policy).
 
 All checks above are documentation-to-documentation only. Do not read or
 analyze application source code — that comparison belongs to
@@ -105,4 +113,6 @@ Recommendation / Info), and within Conflict/Gap, by severity
 Propose (don't apply) repository cleanup. You have no write tools: present any
 change — including index regeneration and cross-link fixes — as a patch for the
 user to apply directly, or hand it to `adr-expert` when it touches ADR content.
-Never modify the body of an accepted ADR.
+Never propose changing the architectural decision recorded by an accepted
+ADR. Editorial fixes (formatting, broken links, typos, metadata consistency)
+are acceptable to propose.

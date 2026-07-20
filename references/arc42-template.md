@@ -37,6 +37,7 @@ logging, i18n, etc.
 ## 9. Architecture Decisions
 Important decisions with rationale.
 → Link the ADRs (see `references/adr-template.md`); do not restate them here.
+Do not summarize accepted ADRs unless needed for orientation.
 
 ## 10. Quality Requirements
 Quality tree and concrete, testable quality scenarios.

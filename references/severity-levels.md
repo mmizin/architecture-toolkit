@@ -33,7 +33,7 @@ artifact; severity classifies one finding within a report.
 - **High** — accepted artifacts actively contradict each other.
 - **Medium** — missing cross-link or index entry; doesn't mislead, but makes
   the record harder to trust or navigate.
-- **Low** — cosmetic (title inconsistency, minor numbering gap).
+- **Low** — cosmetic (title inconsistency, minor numbering inconsistency).
 
 ## Validation principle
 

@@ -22,8 +22,9 @@ levels your audience needs; the Context and Container levels cover most needs.
 - Distinguish **people**, the **system in scope**, and **external systems**
   visually (color/shape).
 - Keep element names and responsibilities short; detail belongs in arc42.
-- Prefer **text-based** diagrams (Mermaid or Structurizr DSL) checked into the
-  repo so they version alongside code.
+- Default to **text-based** diagrams (Mermaid or Structurizr DSL) checked into
+  the repo so they version alongside code, unless there's a compelling reason
+  otherwise.
 
 ## Mermaid — System Context example
 
