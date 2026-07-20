@@ -3,11 +3,12 @@ name: architecture-bootstrap
 description: >-
   Entry point for a project with no (or stale) architecture documentation.
   Given a fresh codebase, sequence architecture-discovery, adr-expert,
-  c4-expert, and arc42-expert into one coherent documentation set — README/
-  ARCHITECTURE overview, arc42 sections, C4 diagrams, and an ADR index — with
-  consistent cross-links. Use when the user wants to "document the whole
-  project" or "create the docs a project is missing" rather than a single
-  artifact, and doesn't know which specific skill to start with.
+  c4-expert, arc42-expert, and architecture-librarian into one coherent
+  documentation set — README/ARCHITECTURE overview, arc42 sections, C4
+  diagrams, and an ADR index — with consistent cross-links. Use when the
+  user wants to "document the whole project" or "create the docs a project
+  is missing" rather than a single artifact, and doesn't know which specific
+  skill to start with.
 ---
 
 # Architecture Bootstrap
@@ -18,6 +19,23 @@ The entry point for "document this project from zero" and "backfill the docs
 a project should have." It doesn't produce a single artifact itself — it
 determines what documentation the project needs and guides the sequence of
 skills that produce it.
+
+## Scope
+
+**Responsible for:**
+- deciding the documentation starting point for an undocumented project
+- sequencing architecture documentation work across the other modules
+- proposing the initial documentation plan
+
+**Not responsible for:**
+- discovering architecture from code (that's `architecture-discovery`)
+- writing ADRs, C4 diagrams, or arc42 sections itself
+- maintaining documentation consistency over time
+
+**Escalates to:**
+- `architecture-discovery` — to ground the plan in the real system.
+- `adr-expert`, `c4-expert`, `arc42-expert` — to produce each artifact.
+- `architecture-librarian` — to keep the resulting set healthy afterward.
 
 ## When to use
 
@@ -37,13 +55,17 @@ skills that produce it.
    - C4 System Context + Container diagrams
    - arc42 sections that the system warrants
    - ADRs for the significant decisions discovery surfaced
-   - An ADR index (`docs/adr/README.md`)
+   - an initial ADR index (`docs/adr/README.md`), if ADRs are created
    Get confirmation before generating in bulk.
-3. **Generate,** applying each module's conventions
-   (`arc42-expert`, `c4-expert`, `adr-expert`), one artifact at a time.
-4. **Cross-link and verify.** Ensure diagrams, arc42 sections, and ADRs
-   reference each other and don't duplicate content. Flag anything inferred
-   rather than observed for the user to confirm.
+3. **Apply the appropriate skills** — `arc42-expert`, `c4-expert`,
+   `adr-expert` — one artifact at a time, following each module's own
+   conventions.
+4. **Connect the artifacts.** Ensure the diagrams, arc42 sections, and ADRs
+   just created reference each other correctly and don't duplicate content.
+   Flag anything inferred rather than observed for the user to confirm.
+5. **Hand off for ongoing health.** Recommend an `architecture-librarian`
+   pass to verify repository-wide consistency and index health going
+   forward — this skill sets up the initial map, it doesn't maintain it.
 
 ## Note on sequencing, not orchestration
 
