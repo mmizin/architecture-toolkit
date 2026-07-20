@@ -3,7 +3,8 @@ name: c4-expert
 description: >-
   Create and review C4 model diagrams (System Context, Container, Component,
   and optionally Code) for a software system. Produces diagrams as text
-  (Mermaid or Structurizr DSL) that live alongside the code. Use when the user
+  (Mermaid or Structurizr DSL) suitable for version-controlled architecture
+  documentation. Use when the user
   wants to visualize system architecture, document containers and their
   interactions, or keep diagrams consistent with documented system
   boundaries. Works from an architecture-discovery report or from a
@@ -55,22 +56,26 @@ at increasing zoom levels, each with a clear audience.
 2. **Container** — deployable/runnable units (apps, services, databases) and
    their interactions. For technical stakeholders. *Usually the most valuable.*
 3. **Component** — components inside one container. Only where it earns its keep.
-4. **Code** — class/schema level. Rarely worth maintaining by hand.
+4. **Code** — class-level detail. Usually generated from code rather than
+   maintained by hand.
 
 Diagrams show structure and relationships only — see
-`references/terminology.md`'s "Artifact ownership" entry for what C4 owns
-versus what belongs to an ADR or arc42.
+`references/terminology.md` for artifact ownership conventions: C4 owns
+structural views; ADRs own decision rationale; arc42 owns the narrative
+that ties them together.
 
 ## Workflow
 
 1. Establish scope and audience — which level(s) are actually needed.
-2. Identify people, the system in scope, external systems, and (for Container)
-   the containers and their communication (protocol, sync/async) from
-   available architecture information — a discovery report, ADRs, or what
-   the user provides. Don't infer unknown boundaries from code yourself;
-   that's `architecture-discovery`'s job. If the information given is
-   insufficient, ask before drawing — don't invent containers or
-   relationships.
+2. Identify, using only provided architecture information (a discovery
+   report, ADRs, or what the user gives you) — never inferred from code
+   yourself, that's `architecture-discovery`'s job:
+   - people and external systems
+   - the system boundary
+   - (for Container) the containers and their communication paths
+     (protocol, sync/async)
+   If the information given is insufficient, ask before drawing — don't
+   invent containers or relationships.
 3. Render as **Mermaid** (`C4Context` / `flowchart`) or **Structurizr DSL**;
    default to Mermaid for portability.
 4. Validate against `references/review-checklist.md`'s C4-specific
@@ -83,6 +88,7 @@ versus what belongs to an ADR or arc42.
 - Prefer an `architecture-discovery` report if one exists.
 - Otherwise ask for: system purpose, main containers, data stores, and external
   dependencies. Don't proceed on assumptions where the answer materially
-  changes the diagram.
+  changes the diagram — prefer asking for clarification over creating
+  speculative architecture.
 
 See `references/c4-guidelines.md` for conventions and examples.
