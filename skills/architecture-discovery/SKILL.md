@@ -1,8 +1,9 @@
 ---
 name: architecture-discovery
 description: >-
-  Scan an existing codebase to reconstruct its architecture and surface the
-  documentation it is missing. Detects languages, frameworks, modules,
+  Scan an existing codebase to reconstruct its architecture and surface
+  documentation gaps revealed by the discovered architecture. Detects
+  languages, frameworks, modules,
   services, data stores, and integration points; infers component boundaries
   and data flows; and identifies candidate architectural decisions evident
   from the code that may require ADRs. Use when the user wants to understand
@@ -76,8 +77,9 @@ between reality and its documentation.
 5. **Report.** Emit a discovery report:
    - System overview (one paragraph)
    - Component/module inventory with responsibilities
-   - Inferred data flows and integration points
-   - Candidate ADRs (decisions worth recording), ranked by significance
+   - Observed and inferred data flows and integration points
+   - Candidate ADRs (potential decisions requiring confirmation), ranked by
+     significance
    - Documentation gaps and a recommended generation order
 
 ## Handing off
