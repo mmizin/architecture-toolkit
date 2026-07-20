@@ -70,7 +70,7 @@ skills that produce it.
    `adr-expert` — one artifact at a time, following each module's own
    conventions.
 4. **Connect the artifacts.** Add the required references between the
-   artifacts just created: arc42 §9 → ADRs, arc42 §3/5/6 → C4 diagrams, ADRs
+   artifacts just created: arc42 §9 → ADRs, arc42 §3/5/6/7 → C4 diagrams, ADRs
    → related ADRs. Flag anything inferred rather than observed for the user
    to confirm. Do not perform repository-wide consistency auditing — that's
    `architecture-librarian`; this step is wiring, not auditing.

@@ -92,7 +92,7 @@ orchestrator:
    - **`adr-expert`** — turn the significant candidate decisions into ADRs.
    - **`c4-expert`** — diagram the discovered boundaries (Context / Container).
    - **`arc42-expert`** — write the architecture narrative, linking ADRs (§9)
-     and C4 diagrams (§3/5/6).
+     and C4 diagrams (§3/5/6/7).
 3. **`architecture-reviewer`** (agent) — independent critique. Every authoring
    module escalates here when the question is architectural quality rather than
    documentation form.

@@ -25,6 +25,11 @@ at increasing zoom levels, each with a clear audience.
 - choosing the appropriate C4 abstraction level for the audience
 - documenting system context, containers, and components visually
 - validating a diagram's own structure against C4 conventions
+- **supplementary diagram types** — Dynamic (runtime collaboration for a
+  scenario) and Deployment (mapping containers to infrastructure nodes). These
+  are not levels; they complement the four below. *v0.1: ownership declared,
+  conventions and Mermaid examples land in v0.2 — expect scope, not yet
+  step-by-step guidance.*
 
 **Not responsible for:**
 - discovering architecture or system boundaries from source code

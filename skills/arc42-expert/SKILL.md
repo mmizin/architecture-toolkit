@@ -6,7 +6,7 @@ description: >-
   structured architecture document for a system, wants to fill or refresh
   specific arc42 sections, or wants to check existing arc42 documentation for
   structural completeness. Integrates ADRs (section 9) and C4 diagrams
-  (sections 3, 5, 6) by reference rather than duplicating them.
+  (sections 3, 5, 6, 7) by reference rather than duplicating them.
 ---
 
 # arc42 Expert
@@ -52,8 +52,8 @@ proven 12-section template that scales from a one-pager to full documentation.
 3. Context & Scope  *(→ C4 System Context)*
 4. Solution Strategy
 5. Building Block View  *(→ C4 Container/Component)*
-6. Runtime View  *(→ sequence / C4 dynamic)*
-7. Deployment View
+6. Runtime View  *(→ sequence / C4 Dynamic)*
+7. Deployment View  *(→ C4 Deployment)*
 8. Cross-cutting Concepts
 9. Architecture Decisions  *(→ reference ADRs; do not restate their
    reasoning)*
@@ -76,7 +76,7 @@ views (C4).
    undocumented, hand off to `architecture-discovery` instead of inferring it
    yourself.
 3. Draft/update sections using `references/arc42-template.md`.
-4. **Reference, don't duplicate**: section 9 links to ADRs; sections 3/5/6
+4. **Reference, don't duplicate**: section 9 links to ADRs; sections 3/5/6/7
    embed or link C4 diagrams.
 5. Validate against `references/review-checklist.md`. Apply only the
    arc42-specific criteria and the documentation-completeness dimensions;
