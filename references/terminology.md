@@ -30,3 +30,11 @@ locally.
   `architecture-discovery` re-scanning the repository, not by
   `architecture-librarian`, which only compares documentation artifacts
   against each other.
+- **Artifact ownership** — each documentation type owns one kind of content;
+  the others reference it rather than restate it. ADRs own the reasoning
+  behind a decision (the "why"). C4 diagrams own the structural/relational
+  view (the "what," visually). arc42 owns the narrative that ties everything
+  together section by section (the "how it all fits"), citing ADRs and C4
+  diagrams instead of repeating their content. Copying decision rationale or
+  diagram content into arc42 (or vice versa) is a drift risk, not a
+  convenience.
