@@ -8,7 +8,7 @@ description: >-
   numbering/naming, and cross-links. Read-only: it reports and proposes edits as
   a patch for the user or `adr-expert` to apply, and never writes files itself.
 tools: Read, Grep, Glob
-model: inherit
+model: sonnet
 ---
 
 # Architecture Librarian

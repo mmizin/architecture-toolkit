@@ -8,7 +8,8 @@ description: >-
   consequences, and challenges weak reasoning. Read-only: it critiques, it does
   not rewrite the artifact.
 tools: Read, Grep, Glob
-model: inherit
+model: opus
+effort: high
 ---
 
 # Architecture Reviewer
