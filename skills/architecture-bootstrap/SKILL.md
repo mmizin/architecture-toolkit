@@ -29,7 +29,7 @@ skills that produce it.
   the only module that turns a gap inventory into an ordered, confirmed plan
 - proposing the initial documentation plan
 - owning `ARCHITECTURE.md` as the entry point and navigation map, as defined in
-  `references/terminology.md`
+  `../../references/terminology.md`
 
 **Not responsible for:**
 - discovering architecture from code (that's `architecture-discovery`)
@@ -64,7 +64,7 @@ skills that produce it.
    e.g.:
    - `ARCHITECTURE.md` as the entry point: links to each artifact below with a
      one-line summary of each — a navigation map, not architecture content
-     (see `references/terminology.md`)
+     (see `../../references/terminology.md`)
    - C4 System Context + Container diagrams
    - arc42 sections that the system warrants
    - ADRs for the significant decisions discovery surfaced
@@ -87,12 +87,12 @@ skills that produce it.
 
 ## Shared references
 
-- `references/terminology.md` — the artifact vocabulary this skill plans with,
+- `../../references/terminology.md` — the artifact vocabulary this skill plans with,
   including which artifact type owns which content and the definition of
   `ARCHITECTURE.md`. Name artifacts as this glossary names them; if a plan needs
   an artifact type the glossary doesn't define, define it there first. Do not
   duplicate ownership rules locally — this is the single source for them.
-- `references/plugin-design-principles.md` — read before extending this plugin
+- `../../references/plugin-design-principles.md` — read before extending this plugin
   with a new module or artifact type. This skill coordinates all the others, so
   it is the one most likely to surface a gap that looks like a missing module.
 

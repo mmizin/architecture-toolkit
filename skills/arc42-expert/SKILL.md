@@ -60,7 +60,7 @@ proven 12-section template that scales from a one-pager to full documentation.
 9. Architecture Decisions  *(→ reference ADRs; do not restate their
    reasoning)*
 10. Quality Requirements  *(use the shared vocabulary in
-    `references/quality-attributes.md`; express important qualities as
+    `../../references/quality-attributes.md`; express important qualities as
     concrete quality scenarios, not vague adjectives)*
 11. Risks & Technical Debt
 12. Glossary
@@ -70,7 +70,7 @@ system's complexity; don't pad empty sections.
 
 ## Workflow
 
-See `references/terminology.md` for artifact ownership conventions: arc42
+See `../../references/terminology.md` for artifact ownership conventions: arc42
 narrates and links, it doesn't own decision rationale (ADRs) or structural
 views (C4).
 
@@ -83,12 +83,12 @@ views (C4).
    (README) whenever both exist. If architecture knowledge is missing rather
    than just undocumented, hand off to `architecture-discovery` instead of
    inferring it yourself.
-3. Draft/update sections using `references/arc42-template.md`.
+3. Draft/update sections using `../../references/arc42-template.md`.
 4. **Reference, don't duplicate**: section 9 links to ADRs; sections 3/5/6/7
    embed or link existing C4 diagrams — don't draw new ones yourself.
-5. Validate against `references/review-checklist.md`. Apply only the
+5. Validate against `../../references/review-checklist.md`. Apply only the
    arc42-specific criteria and the documentation-completeness dimensions;
    do not evaluate architectural correctness — that's
    `architecture-reviewer`.
 
-See `references/arc42-template.md` for the section prompts.
+See `../../references/arc42-template.md` for the section prompts.

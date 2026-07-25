@@ -69,7 +69,7 @@ at increasing zoom levels, each with a clear audience.
    this level.
 
 Diagrams show structure and relationships only — see
-`references/terminology.md` for artifact ownership conventions: C4 owns
+`../../references/terminology.md` for artifact ownership conventions: C4 owns
 structural views; ADRs own decision rationale; arc42 owns the narrative
 that ties them together.
 
@@ -90,9 +90,9 @@ that ties them together.
 3. Render as **Mermaid** (`C4Context` / `flowchart`) or **Structurizr DSL**;
    default to Mermaid for portability. Keep diagrams readable — split rather
    than overcrowd a single diagram.
-4. Validate against `references/review-checklist.md`'s C4-specific criteria —
+4. Validate against `../../references/review-checklist.md`'s C4-specific criteria —
    the single review bar for every artifact type in this plugin.
-   `references/c4-guidelines.md` holds the conventions and Mermaid examples
+   `../../references/c4-guidelines.md` holds the conventions and Mermaid examples
    those criteria check against. If the open question is whether the diagram
    still matches the *real system*, that is outside this skill's scope:
    request an `architecture-discovery` pass rather than reading source code
@@ -106,4 +106,4 @@ that ties them together.
   the answer materially changes the diagram — prefer asking for clarification
   over creating speculative architecture.
 
-See `references/c4-guidelines.md` for conventions and examples.
+See `../../references/c4-guidelines.md` for conventions and examples.

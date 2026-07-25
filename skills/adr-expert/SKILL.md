@@ -83,8 +83,8 @@ scalability, security, performance, reliability, DX, or operations.
 3. **Compare options objectively.** Always present materially realistic
    alternatives with advantages, disadvantages, and risks — never only the
    chosen one.
-4. **Draft** using the template in `references/adr-template.md`.
-5. **Self-review** against `references/review-checklist.md` before
+4. **Draft** using the template in `../../references/adr-template.md`.
+5. **Self-review** against `../../references/review-checklist.md` before
    presenting. Pay particular attention to Significance, Decision drivers,
    Alternatives, Evidence, and Consequences. Also check: does this overlap
    with an ADR you already know of or that was referenced during the

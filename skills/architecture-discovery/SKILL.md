@@ -72,7 +72,7 @@ between reality and its documentation.
    every dependency into a candidate decision — using a library (e.g.
    Jackson) isn't architectural; choosing an architectural style (e.g.
    event-driven) is. Mark these as **candidate ADRs** (see
-   `references/terminology.md`) requiring confirmation, not settled
+   `../../references/terminology.md`) requiring confirmation, not settled
    decisions.
 4. **Assess doc gaps.** Compare what exists (`README`, `ARCHITECTURE.md`,
    `docs/`, ADRs, diagrams) against what the discovered architecture
