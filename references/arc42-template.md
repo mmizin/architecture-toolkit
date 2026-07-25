@@ -43,7 +43,12 @@ Do not summarize accepted ADRs unless needed for orientation.
 Quality tree and concrete, testable quality scenarios.
 
 ## 11. Risks and Technical Debt
-Known risks and debt, named honestly, with mitigation where known.
+Known risks and debt, named honestly, with mitigation where known. Where a
+risk originated as an `architecture-discovery` Implementation Finding, cite
+its `FINDINGS.md` ID rather than restating the evidence — this section
+narrates the risk and how it was or is being mitigated (architectural
+change, code fix, process control, or accepted risk); `FINDINGS.md` is the
+source of record for the evidence and lifecycle status itself.
 
 ## 12. Glossary
 Domain and technical terms, defined once.

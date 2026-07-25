@@ -57,7 +57,10 @@ skills that produce it.
 ## Workflow
 
 1. **Discover.** Run `architecture-discovery` first (or ingest its report) to
-   ground everything in the real system.
+   ground everything in the real system. If discovery's own process produces
+   Implementation Findings, those are recorded in `FINDINGS.md` as part of
+   discovery's output; bootstrap does not create or write to it itself
+   (`../../references/FINDINGS-CONTRACT.md` R-002).
 2. **Propose a plan.** Present the intended documentation set and order,
    tailored to the project's size and complexity rather than always
    proposing every artifact — a small CLI tool may not warrant a full arc42,
@@ -70,15 +73,25 @@ skills that produce it.
    - ADRs for the significant decisions discovery surfaced
    - an ADR index (`docs/adr/README.md`), if repository conventions use one
      and ADRs are created
+   - `FINDINGS.md`, listed as-is if discovery produced one — bootstrap
+     includes it in the plan's inventory but neither generates nor edits it;
+     an arc42 §11 pass may later reference its `Open`/`Accepted` entries by
+     ID
    Get confirmation before generating in bulk.
-3. **Apply the appropriate skills** — `arc42-expert`, `c4-expert`,
-   `adr-expert` — one artifact at a time, following each module's own
+3. **Apply the appropriate skills** — `adr-expert`, `c4-expert`,
+   `arc42-expert` — one artifact at a time, following each module's own
    conventions. Finish and validate each artifact before moving to the next.
 4. **Connect the artifacts.** Add the required references between the
-   artifacts just created: arc42 §9 → ADRs, arc42 §3/5/6/7 → C4 diagrams, ADRs
-   → related ADRs. Flag anything inferred rather than observed for the user
-   to confirm — never silently invent architecture facts to complete
-   cross-links. Do not perform repository-wide consistency auditing — that's
+   artifacts just created: arc42 §9 → ADRs, arc42 §3/5/6/7 → C4 diagrams,
+   arc42 §11 → `Open`/`Accepted` `FINDINGS.md` entries by ID, ADRs → related
+   ADRs, and, where an ADR was written specifically to resolve a finding, add
+   the corresponding cross-references. This step only wires references; it
+   does not change a finding's `Status` or write its `Resolved by:` field —
+   those stay owned by the actors
+   `../../references/FINDINGS-CONTRACT.md` R-007 names, not by bootstrap.
+   Flag anything inferred rather than observed for the user to confirm —
+   never silently invent architecture facts to complete cross-links. Do not
+   perform repository-wide consistency auditing — that's
    `architecture-librarian`; this step is wiring, not auditing.
 5. **Verify and hand off.** Recommend an `architecture-librarian` pass to
    validate the initial documentation set now — especially after substantial
