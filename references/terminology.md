@@ -11,9 +11,27 @@ locally.
 - **C4 model** — a four-level diagramming approach (Context, Container,
   Component, Code). See `references/c4-guidelines.md`.
 - **Discovery report** — the output of `architecture-discovery`: system
-  overview, component inventory, data flows, candidate ADRs, and doc gaps.
+  overview, component inventory, data flows, candidate ADRs, documentation
+  gaps, and references to Implementation Findings when produced.
 - **Candidate ADR** — a decision inferred from the code that has no ADR yet;
   surfaced by discovery, not yet accepted as documented.
+- **Implementation Finding** — an evidence-backed, observed implementation
+  condition that carries a plausible risk, surfaced by
+  `architecture-discovery`, distinct from a Candidate ADR (an
+  undocumented decision) and a Documentation Gap (missing doc). Recorded in
+  `FINDINGS.md` per `references/findings-template.md`, governed by
+  `references/FINDINGS-CONTRACT.md`. Not the same concept as the
+  Conflict/Gap/Recommendation/Info findings in `references/severity-levels.md`
+  — that taxonomy scores documentation-consistency findings for
+  `architecture-librarian` and `architecture-reviewer`; the two are never
+  merged.
+- **PRD (Product Requirements Document)** — owned by the companion product
+  toolkit, not this plugin; out of scope here beyond citation. `FC-`
+  (Failure Condition) and `FR-` (Functional Requirement) are its requirement
+  ID namespaces. This toolkit only *references* those IDs — from an
+  Implementation Finding's `Related:` field, for example — when a PRD
+  happens to exist for the feature under discovery; nothing here creates,
+  validates, or requires one.
 - **Superseded** — an ADR's status once a later ADR replaces its decision.
   The old ADR is never deleted or rewritten; it's marked and linked forward.
 - **Building block** — arc42's term for a static structural unit (module,

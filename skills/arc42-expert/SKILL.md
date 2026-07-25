@@ -62,7 +62,8 @@ proven 12-section template that scales from a one-pager to full documentation.
 10. Quality Requirements  *(use the shared vocabulary in
     `../../references/quality-attributes.md`; express important qualities as
     concrete quality scenarios, not vague adjectives)*
-11. Risks & Technical Debt
+11. Risks & Technical Debt  *(→ reference `Open` or `Accepted`
+    Implementation Findings in `FINDINGS.md`; do not restate their evidence)*
 12. Glossary
 
 Not every project needs equal depth in every section — match depth to the
@@ -77,15 +78,20 @@ views (C4).
 1. Determine scope — full document vs specific sections. Don't pad empty
    sections; omit or mark "not applicable" honestly.
 2. Gather available inputs: an existing discovery report, ADRs, C4 diagrams,
-   READMEs. Use what the user already provided before requesting additional
-   inputs, and prefer repository architecture documents (ADRs, C4, an
-   existing arc42/`ARCHITECTURE.md`) over general project documentation
-   (README) whenever both exist. If architecture knowledge is missing rather
-   than just undocumented, hand off to `architecture-discovery` instead of
-   inferring it yourself.
+   `FINDINGS.md` if one exists, READMEs. Use what the user already provided
+   before requesting additional inputs, and prefer repository architecture
+   documents (ADRs, C4, an existing arc42/`ARCHITECTURE.md`) over general
+   project documentation (README) whenever both exist. If architecture
+   knowledge is missing rather than just undocumented, hand off to
+   `architecture-discovery` instead of inferring it yourself.
 3. Draft/update sections using `../../references/arc42-template.md`.
 4. **Reference, don't duplicate**: section 9 links to ADRs; sections 3/5/6/7
-   embed or link existing C4 diagrams — don't draw new ones yourself.
+   embed or link existing C4 diagrams; section 11 links to `Open` or
+   `Accepted` entries in `FINDINGS.md` by ID as current risk — don't draw new
+   ones yourself, and don't copy an entry's evidence or impact text into the
+   section. `Closed` findings are never cited as current risk; §11 may still
+   reference one historically (e.g. "an earlier concurrency risk, IF-001,
+   was resolved by ADR-0007") when narrating how the architecture evolved.
 5. Validate against `../../references/review-checklist.md`. Apply only the
    arc42-specific criteria and the documentation-completeness dimensions;
    do not evaluate architectural correctness — that's

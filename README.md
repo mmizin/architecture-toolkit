@@ -22,7 +22,7 @@ references (and later, MCP servers). Each module owns exactly one area.
 ### Skills (workflows)
 | Skill | Purpose |
 |-------|---------|
-| `architecture-discovery` | Scan a codebase, reconstruct its architecture, and surface missing docs and candidate ADRs. |
+| `architecture-discovery` | Scan a codebase, reconstruct its architecture, and surface documentation gaps, candidate ADRs, and Implementation Findings. |
 | `architecture-bootstrap` | Sequence an end-to-end documentation set for a project ("document everything"). |
 | `adr-expert` | Create, review, improve, and govern ADRs across their lifecycle. |
 | `c4-expert` | Create and review C4 diagrams (Context / Container / Component, plus supplementary Dynamic and Deployment views). |
@@ -40,6 +40,7 @@ references (and later, MCP servers). Each module owns exactly one area.
 - `references/adr-template.md`
 - `references/arc42-template.md`
 - `references/c4-guidelines.md`
+- `references/findings-template.md`
 
 **Vocabularies** — the shared terms modules reason with:
 - `references/terminology.md`
@@ -50,6 +51,7 @@ references (and later, MCP servers). Each module owns exactly one area.
 - `references/review-checklist.md`
 - `references/severity-levels.md`
 - `references/plugin-design-principles.md`
+- `references/FINDINGS-CONTRACT.md`
 
 ## Layout
 
@@ -71,6 +73,8 @@ architecture-toolkit/
 │   ├── arc42-template.md
 │   ├── c4-guidelines.md
 │   ├── decision-drivers.md
+│   ├── FINDINGS-CONTRACT.md
+│   ├── findings-template.md
 │   ├── plugin-design-principles.md
 │   ├── quality-attributes.md
 │   ├── review-checklist.md
@@ -86,10 +90,12 @@ set of **independent** modules with a recommended order rather than a runtime
 orchestrator:
 
 1. **`architecture-discovery`** — scan the project; get a report of structure,
-   data flows, doc gaps, and candidate decisions. This is the grounding step:
-   the discovery report is the preferred input for the authoring modules
-   below, though each can also work from an ADR, diagram, or description the
-   user provides directly.
+   data flows, doc gaps, candidate decisions, and Implementation Findings
+   (evidence-backed conditions that carry a plausible risk, recorded in
+   `FINDINGS.md`). This is the grounding step: the discovery report is the
+   preferred input for the
+   authoring modules below, though each can also work from an ADR, diagram,
+   or description the user provides directly.
 2. **Authoring** — discovery hands off to whichever artifacts the gaps call for:
    - **`adr-expert`** — turn the significant candidate decisions into ADRs.
    - **`c4-expert`** — diagram the discovered boundaries (Context / Container).
