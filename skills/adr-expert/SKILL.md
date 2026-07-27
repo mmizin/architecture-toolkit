@@ -94,7 +94,7 @@ scalability, security, performance, reliability, DX, or operations.
 6. **Link related ADRs and update lifecycle relationships.** Cross-reference
    related ADRs; recommend superseding where appropriate — never supersede
    based on speculation (a superficial resemblance is not a supersede).
-7. **Independent review, then fix cheaply, per the pipeline in**
+7. **Independent review, then fix cheaply, per the contract in**
    **`../../references/delta-review.md`.** Invoke `architecture-reviewer` for
    a Full Review the first time. After applying fixes, self-verify each one
    against the finding it addresses yourself — do not re-invoke the reviewer
