@@ -94,6 +94,18 @@ scalability, security, performance, reliability, DX, or operations.
 6. **Link related ADRs and update lifecycle relationships.** Cross-reference
    related ADRs; recommend superseding where appropriate — never supersede
    based on speculation (a superficial resemblance is not a supersede).
+7. **Independent review, then fix cheaply, per the pipeline in**
+   **`../../references/delta-review.md`.** Invoke `architecture-reviewer` for
+   a Full Review the first time. After applying fixes, self-verify each one
+   against the finding it addresses yourself — do not re-invoke the reviewer
+   for this. Re-invoke `architecture-reviewer` for a Delta Review to
+   independently confirm the fixes and check the declared Changed Region, not
+   to re-review the whole ADR. The Fix → Self-Verify → Delta Review loop may
+   repeat several times as more fixes land. Once the ADR is judged ready,
+   invoke `architecture-reviewer` for the Final Review sign-off gate — today
+   this is implemented as a Full Review, invoked deliberately, not as a
+   fallback. Invoke a Full Review earlier than planned only if a Delta
+   Review's Preconditions aren't met or it escalates.
 
 ## Writing guidelines
 

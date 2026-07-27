@@ -52,6 +52,9 @@ references (and later, MCP servers). Each module owns exactly one area.
 - `references/severity-levels.md`
 - `references/plugin-design-principles.md`
 - `references/FINDINGS-CONTRACT.md`
+- `references/delta-review.md` — the bounded re-review capability
+  (Self-Verification, Delta Review, Final Review) used after a fix cycle,
+  mirrored in product-toolkit
 
 ## Layout
 
@@ -73,6 +76,7 @@ architecture-toolkit/
 │   ├── arc42-template.md
 │   ├── c4-guidelines.md
 │   ├── decision-drivers.md
+│   ├── delta-review.md
 │   ├── FINDINGS-CONTRACT.md
 │   ├── findings-template.md
 │   ├── plugin-design-principles.md

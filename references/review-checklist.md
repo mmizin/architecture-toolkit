@@ -5,6 +5,14 @@ self-review before presenting an artifact to the user). Keeping this in one
 place prevents ADRs, C4 diagrams, and arc42 sections from drifting toward
 different, undocumented review bars.
 
+These criteria are applied in full during a Full Review. A Delta Review
+applies the same criteria, but bounded by `delta-review.md`'s Scope
+boundary — where a criterion below requires information outside the Changed
+Region, a Delta Review does not expand scope to obtain it; it follows the
+escalation rules defined in `delta-review.md` instead. The Delta Review
+contract constrains how these criteria are applied within the bounded review
+scope; it does not change what the criteria are.
+
 ## Applies to every artifact type
 
 - **Significance** — is this actually worth documenting, or is it noise?
@@ -28,12 +36,11 @@ different, undocumented review bars.
 - **Durability** — would a new engineer understand the reasoning two years
   from now, without asking the author?
 - **Consistency** — does it contradict an existing ADR, diagram, or arc42
-  section in a way that materially affects its validity? Check only the
-  directly related artifacts you already have in hand (the ones it cites, or
-  the 2-3 most obviously relevant) — do not go searching the repository for
-  more. If verifying consistency would mean scanning beyond that, stop and
-  note it as an open question or hand it to `architecture-librarian` instead
-  of doing an ad hoc repository-wide audit.
+  section in a way that materially affects its validity? Prefer the directly
+  related artifacts you already have in hand (the ones it cites, or the 2-3
+  most obviously relevant); repository-wide consistency audits belong to
+  `architecture-librarian`, not to a per-artifact review — hand off rather
+  than turning this check into an ad hoc repository-wide audit.
 
 ## Artifact-specific additions
 
