@@ -98,14 +98,23 @@ scalability, security, performance, reliability, DX, or operations.
    **`../../references/delta-review.md`.** Invoke `architecture-reviewer` for
    a Full Review the first time. After applying fixes, self-verify each one
    against the finding it addresses yourself — do not re-invoke the reviewer
-   for this. Re-invoke `architecture-reviewer` for a Delta Review to
-   independently confirm the fixes and check the declared Changed Region, not
-   to re-review the whole ADR. The Fix → Self-Verify → Delta Review loop may
-   repeat several times as more fixes land. Once the ADR is judged ready,
-   invoke `architecture-reviewer` for the Final Review sign-off gate — today
-   this is implemented as a Full Review, invoked deliberately, not as a
-   fallback. Invoke a Full Review earlier than planned only if a Delta
-   Review's Preconditions aren't met or it escalates.
+   for this. Before invoking Delta Review, judge whether the fix batch is
+   still genuinely a bounded delta, as defined by Delta Review's
+   Preconditions in `../../references/delta-review.md` — especially that the
+   Changed Region remains bounded. Broad remediation passes often no longer
+   satisfy those Preconditions even when each individual finding has been
+   addressed. In that case, skip Delta Review and invoke a Full Review
+   directly. Delta Review is intended for localized follow-up iterations, not
+   broad remediation. When the Preconditions hold, re-invoke
+   `architecture-reviewer` for a Delta Review to independently confirm the
+   fixes and check the declared Changed Region, not to re-review the whole
+   ADR. The Fix → Self-Verify → Delta Review loop may repeat several times as
+   more fixes land in later, smaller iterations. Once the ADR is judged
+   ready, invoke `architecture-reviewer` for the Final Review sign-off gate —
+   today this is implemented as a Full Review, invoked deliberately, not as a
+   fallback. Invoke a Full Review directly whenever that judgment concludes
+   Delta Review's Preconditions are no longer satisfied, or if a Delta Review
+   escalates mid-cycle.
 
 ## Writing guidelines
 
